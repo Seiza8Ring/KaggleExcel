@@ -3,16 +3,18 @@
 <head>
 <meta charset="utf-8">
 <title>Top Listed</title>
+<link href="style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
 	<header>
-		Top list
+		<h1>Top Manga List 2025</h1>
+		<h4>List and Info from MyAnimeList.net, dataset provided by Hamza Ashfaq on Kaggle.com</h4>
 	</header>
-	<div>
+	<div id="all">
 		<h1>Top 10</h1>
 			<table>
-				<tr>
+				<tr class="headRow">
 				<th>Name</th>
 				<th>Score</th>
 				<th>Favorited</th>
@@ -82,10 +84,10 @@
 
 	</div>
 	
-	<div>
+	<div id="man">
 		<h2>Top 5 Manga</h2>
 			<table>
-				<tr>
+				<tr class="headRow">
 				<th>Name</th>
 				<th>Score</th>
 				<th>Favorited</th>
@@ -118,10 +120,10 @@
 			</table>
 	</div>
 	
-	<div>
+	<div id="hwa">
 		<h2>Top 5 Manhwa</h2>
 			<table>
-				<tr>
+				<tr class="headRow">
 				<th>Name</th>
 				<th>Score</th>
 				<th>Favorited</th>
@@ -154,10 +156,10 @@
 			</table>
 	</div>
 	
-	<div>
+	<div id="hua">
 		<h2>Top 4 Manhua</h2>
 			<table>
-				<tr>
+				<tr class="headRow">
 				<th>Name</th>
 				<th>Score</th>
 				<th>Favorited</th>
@@ -190,10 +192,10 @@
 			</table>
 	</div>
 	
-	<div>
+	<div id="nov">
 		<h2>Top 5 Novels</h2>
 			<table>
-				<tr>
+				<tr class="headRow">
 				<th>Name</th>
 				<th>Score</th>
 				<th>Favorited</th>
@@ -226,10 +228,10 @@
 			</table>
 	</div>
 	
-	<div>
+	<div id="ln">
 		<h2>Top 5 Light Novels</h2>
 		<table>
-				<tr>
+				<tr class="headRow">
 				<th>Name</th>
 				<th>Score</th>
 				<th>Favorited</th>
@@ -261,5 +263,42 @@
 				</tr>
 			</table>
 	</div>
+	<div class="graph-container">
+        <h2>Graph</h2>
+		<button id="changeImageBtn">Show Top list by Favorited</button>
+        
+		<img id="graphImage" src="images/top10graph.png" alt="Top 10 bar graph">
+    </div>
+
+	
+	    <script>
+        // --- JavaScript Logic ---
+
+        // 1. Define the paths to two images
+        const imageOneSrc = 'images/top10graph.png';
+        const imageTwoSrc = 'images/topbyFavor.png';
+
+        // 2. Get references to the HTML elements we need to work with
+        const imageElement = document.getElementById('graphImage');
+        const changeButton = document.getElementById('changeImageBtn');
+
+        // 3. Add a 'click' event listener to the button
+        changeButton.addEventListener('click', function() {
+            // 4. Check which image is currently displayed
+            if (imageElement.src.includes('top10graph.png')) {
+                // If it's the first image, switch to the second
+                imageElement.src = imageTwoSrc;
+                imageElement.alt = "Top list by Favorited"; // update the alt text
+                changeButton.textContent = 'Show Top 10 Data'; // Update button text for clarity
+            } else {
+                // Otherwise, switch back to the first image
+                imageElement.src = imageOneSrc;
+                imageElement.alt = "Top 10 bar graph";
+                changeButton.textContent = 'Show Top list by Favorited';
+            }
+        });
+    </script>
+	
+	<footer>Created by L.Ring, <a href="https://www.kaggle.com/datasets/hamzaashfaque1999/myanimelist-scraped-data?select=manga_entries.csv">Dataset</a></footer>
 </body>
 </html>
