@@ -14,13 +14,35 @@ html {
 		justify-content: center;/* Center items vertically */
 		min-height: 100vh;      /* Make body at least the height of the screen */
 		margin: 0;              /* Remove default browser margin */
-		padding: 2rem 0;        /* Add some padding for spacing */
+		        /* Add some padding for spacing */
+		background-image: url(images/generatedImage.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+		 
 	}
+div {
+	background-color: #A39893;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+header {
+	/*background-color: #B17C72;*/
+	background-color: rgba(191,149,149,0.80);
+	background-size: contain;
+	width: 100%;
+}
 
 	header h1 {
 		font-size: 50px;
 		text-align: center;
+		
 	}
+header h4 {
+	text-align: center;
+}
 
 	#man, #hwa, #hua, #nov, #ln{
 		display: inline-block;
